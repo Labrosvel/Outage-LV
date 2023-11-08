@@ -5,50 +5,48 @@
         <name>Engineering columns</name>
         <record_for_rollback>true</record_for_rollback>
         <script><![CDATA[// Delete all existing records
-var targetGr = new GlideRecord('x_1092147_outage_l_outage_table_lv');
-targetGr.query();
-targetGr.deleteMultiple();
+var oldtargetGr = new GlideRecord('x_1092147_outage_l_outage_table_lv');
+oldtargetGr.query();
+oldtargetGr.deleteMultiple();
 
 // Create an object to store rows from a table
-var myObj = new GlideRecord('cmdb_ci_outage');
+var gr = new GlideRecord('cmdb_ci_outage');
+gr.addQuery('type','=','outage');
+gr.query();
 
-// Build query
-myObj.addQuery('type','!=','outage');
+// 	Iterate through the existing records
+while(gr.next()){
+	// Populate fields in the target table with data from the source table
+	var targetGr = new GlideRecord('x_1092147_outage_l_outage_table_lv');
+	targetGr.initialize(); //Initialise the target record
+	targetGr.number = gr.number;
+	targetGr.configuration_item = gr.configuration_item;
+	targetGr.type = gr.type;
+	targetGr.begin = gr.begin;
+	targetGr.end = gr.end;
+// 	targetGr.duration = gr.duration;
+	var dt1 = new GlideDateTime(gr.begin);
+	var dt2 = new GlideDateTime(gr.end);
+	var duration = new GlideDateTime.subtract(dt1,dt2);
+	targetGr.duration = duration;
+	
+	// Insert the record into the target table
+	targetGr.insert();
+}
 
-// Execute query 
-myObj.query();
-
-// // Check if the target table exists 
-// if (myObj.isValidRecord() && myObj.target_table == 'x_1092147_outage_l_outage_table_lv') {
-// 	// 	Iterate through the existing records
-	while(myObj.next()){
-		// Populate fields in the target table with data from the source table
-		targetGr.initialize(); //Initialise the target record
-		targetGr.number = myObj.number;
-		targetGr.configuration_item = myObj.configuration_item;
-		targetGr.type = myObj.type;
-		targetGr.begin = myObj.begin;
-		targetGr.end = myObj.end;
-		targetGr.duration = myObj.duration;
-		
-		// Insert the record into the target table
-		targetGr.insert();
-// 		var targetRecordSysID = targetGr.insert();
-	}
-// }
 ]]></script>
         <sys_class_name>sys_script_fix</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-08 12:42:44</sys_created_on>
         <sys_id>7792884f97923110504978300153af9f</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>Engineering columns</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
         <sys_update_name>sys_script_fix_7792884f97923110504978300153af9f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-08 13:20:18</sys_updated_on>
+        <sys_updated_on>2023-11-08 16:40:49</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

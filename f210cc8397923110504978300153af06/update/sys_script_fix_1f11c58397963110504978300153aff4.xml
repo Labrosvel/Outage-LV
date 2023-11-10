@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description/>
+        <name>Engineering records dates</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[// Define the table name
+var tableName = 'x_1092147_outage_l_outage_table_lv'; // Replace with your actual table name
+
+// Create a GlideRecord to iterate through the records
+var gr = new GlideRecord(tableName);
+gr.addQuery();
+gr.query();
+
+while (gr.next()) {
+    var startDate = new GlideDateTime(gr.begin); 
+    var endDate = new GlideDateTime(gr.end); 
+
+    if (startDate.getLocalDate().equals(endDate.getLocalDate())) {
+        // If start and end dates are the same day, no need to split
+        continue;
+    }
+
+    // Create separate records for each day
+    while (!startDate.getLocalDate().equals(endDate.getLocalDate())) {
+        var newRecord = new GlideRecord(tableName);
+        newRecord.initialize();
+		newRecord.number = gr.number;
+        newRecord.begin = startDate; // Set the start date
+		var newendDate = startDate.getDate() + ' 06:59:59'; // Set end date and time at 23:59:59
+		newRecord.end = new GlideDateTime(newendDate);
+
+        // Optionally, set other fields as needed
+
+        newRecord.insert();
+
+        // Increment the start date for the next record
+        startDate.addDaysLocalTime(1);
+		var newstartDate = startDate.getDate() + ' 00:00:00'; // Set start date and time at 17:00:00
+		startDate = new GlideDateTime(newstartDate);
+    }
+
+    // Create the last record that spans the end of the incident
+    var lastRecord = new GlideRecord(tableName);
+    lastRecord.initialize();
+	lastRecord.number = gr.number;
+    lastRecord.begin = startDate; // Set the start date
+    lastRecord.end = endDate; // Set the end date to the end of the incident
+
+    // Optionally, set other fields as needed
+
+    lastRecord.insert();
+}
+
+
+
+
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-08 17:04:30</sys_created_on>
+        <sys_id>1f11c58397963110504978300153aff4</sys_id>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>Engineering records dates</sys_name>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_update_name>sys_script_fix_1f11c58397963110504978300153aff4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-10 16:31:13</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

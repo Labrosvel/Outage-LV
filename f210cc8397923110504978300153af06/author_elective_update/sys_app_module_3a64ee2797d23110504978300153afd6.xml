@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="New Outage table">fe64ee2797d23110504978300153afd2</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>New Outage table-LVs</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_1092147_outage_l_new_outage_table_lv</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_1092147_outage_l.new_outage_table_lv_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-10 13:34:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3a64ee2797d23110504978300153afd6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Outage table-LVs</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_update_name>sys_app_module_3a64ee2797d23110504978300153afd6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-10 13:34:54</sys_updated_on>
+        <timeline_page/>
+        <title>New Outage table-LVs</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Outage-LV">f210cc8397923110504978300153af06</application>
+        <file_path/>
+        <instance_id>9fd7ce3fdba3934cff27d5b0cf96191e</instance_id>
+        <instance_name>dev68519</instance_name>
+        <name>sys_app_module_3a64ee2797d23110504978300153afd6</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="New Outage table">fe64ee2797d23110504978300153afd2</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>New Outage table-LVs</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_1092147_outage_l_new_outage_table_lv</name><order/><override_menu_roles>false</override_menu_roles><query/><report/><roles>x_1092147_outage_l.new_outage_table_lv_user</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-11-10 13:34:54</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>3a64ee2797d23110504978300153afd6</sys_id><sys_mod_count>0</sys_mod_count><sys_name>New Outage table-LVs</sys_name><sys_overrides/><sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package><sys_policy/><sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope><sys_update_name>sys_app_module_3a64ee2797d23110504978300153afd6</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-11-10 13:34:54</sys_updated_on><timeline_page/><title>New Outage table-LVs</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-1292861382</payload_hash>
+        <record_name>New Outage table-LVs</record_name>
+        <reverted_from/>
+        <source>0662404f97923110504978300153afe1</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-10 13:34:54</sys_created_on>
+        <sys_id>ba64ee2797d23110504978300153afd9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18bb971565e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-10 13:34:54</sys_updated_on>
+        <type>Module</type>
+        <update_guid>f264ee27c3d231101d28505d5b7e15d9</update_guid>
+        <update_guid_history>f264ee27c3d231101d28505d5b7e15d9:-1292861382</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="New Outage table-LVs">e0323a6397163110504978300153afae</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-10 14:35:06</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>03017fd0067b4d8f80d72f2bb3decdb9</sys_id>
+        <sys_metadata>3a64ee2797d23110504978300153afd6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Outage table-LVs</sys_name>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_scope_delete display_value="">8096e3c28f7048efac55807797b0c2e1</sys_scope_delete>
+        <sys_update_name>sys_app_module_3a64ee2797d23110504978300153afd6</sys_update_name>
+        <sys_update_version display_value="sys_app_module_3a64ee2797d23110504978300153afd6">ba64ee2797d23110504978300153afd9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-10 14:35:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

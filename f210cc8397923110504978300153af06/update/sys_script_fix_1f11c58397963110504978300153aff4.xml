@@ -20,6 +20,9 @@ while (gr.next()) {
         // If start and end dates are the same day, no need to split
         continue;
     }
+	
+	// Delete the original record 	
+	gr.deleteRecord();
 
     // Create separate records for each day
     while (!startDate.getLocalDate().equals(endDate.getLocalDate())) {
@@ -27,8 +30,9 @@ while (gr.next()) {
         newRecord.initialize();
 		newRecord.number = gr.number;
         newRecord.begin = startDate; // Set the start date
-		var newendDate = startDate.getDate() + ' 06:59:59'; // Set end date and time at 23:59:59
+		var newendDate = startDate.getDate() + ' 23:59:59'; // Set end date and time at 23:59:59
 		newRecord.end = new GlideDateTime(newendDate);
+		
 
         // Optionally, set other fields as needed
 
@@ -52,6 +56,20 @@ while (gr.next()) {
     lastRecord.insert();
 }
 
+// Update the duration field with newly calculated values
+var ugr = new GlideRecord(tableName);
+ugr.query();
+
+while(ugr.next()){
+	var dt1 = new GlideDateTime(ugr.begin);
+	var dt2 = new GlideDateTime(ugr.end);
+	var duration = new GlideDateTime.subtract(dt1,dt2);
+	ugr.setValue('duration', duration);
+	
+	// Insert the record into the target table
+	ugr.update();
+}
+
 
 
 
@@ -60,14 +78,14 @@ while (gr.next()) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-08 17:04:30</sys_created_on>
         <sys_id>1f11c58397963110504978300153aff4</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>Engineering records dates</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
         <sys_update_name>sys_script_fix_1f11c58397963110504978300153aff4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-10 16:31:13</sys_updated_on>
+        <sys_updated_on>2023-11-13 13:03:09</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

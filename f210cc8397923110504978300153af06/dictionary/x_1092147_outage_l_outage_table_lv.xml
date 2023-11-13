@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="d132404f97923110504978300153af34" label="Outage_table-LV" max_length="40" name="x_1092147_outage_l_outage_table_lv" type="collection">
         <element attributes="edge_encryption_enabled=true" label="Begin" max_length="40" name="begin" type="glide_date_time"/>
-        <element attributes="edge_encryption_enabled=true" label="Configuration Item" max_length="40" name="configuration_item" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Configuration Item" max_length="40" name="configuration_item" reference="cmdb_ci" type="reference"/>
         <element label="Duration" max_length="40" name="duration" type="glide_duration"/>
         <element attributes="edge_encryption_enabled=true" label="End" max_length="40" name="end" type="glide_date_time"/>
         <element attributes="edge_encryption_enabled=true" label="Number" max_length="40" name="number" type="string"/>

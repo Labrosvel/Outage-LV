@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
     <sys_script_fix action="INSERT_OR_UPDATE">
         <before>false</before>
-        <description/>
+        <description>Populating a new table and calculating duration manually with the script. &#13;
+New table is being reset every time the script is executed.&#13;
+When designing the table, the configuration item is referenced from cmdb_ci. name field.</description>
         <name>Engineering duration</name>
         <record_for_rollback>true</record_for_rollback>
         <script><![CDATA[// Delete all existing records
@@ -38,14 +40,14 @@ while(gr.next()){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-08 12:42:44</sys_created_on>
         <sys_id>7792884f97923110504978300153af9f</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>45</sys_mod_count>
         <sys_name>Engineering duration</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
         <sys_update_name>sys_script_fix_7792884f97923110504978300153af9f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-13 13:08:23</sys_updated_on>
+        <sys_updated_on>2023-11-14 15:31:00</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

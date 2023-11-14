@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
     <sys_script_fix action="INSERT_OR_UPDATE">
         <before>false</before>
-        <description/>
+        <description>Re-engineering the table by aggregating outages with the same 'Type' field to one outage that starts at the earliest datetime of the outages and finishing and the latest datetime of them.</description>
         <name>Engineering types overlap</name>
         <record_for_rollback>true</record_for_rollback>
         <script><![CDATA[// Define the table name
@@ -41,35 +41,51 @@ while (gr.next()) {
 		}
 
 		// Create a new record for the overlapping period
-		createNewRecord(newStartDate, newEndDate, gr.type);
+		createNewRecord(newStartDate, newEndDate, gr.type, gr.configuration_item);
 	}
 }
 
 
-function createNewRecord(start, end, type) {
+function createNewRecord(start, end, type, configuration_item) {
 	var newRecord = new GlideRecord(tableName);
 	newRecord.initialize();
 	newRecord.begin = start; // Set the start date
 	newRecord.end = end; // Set the end date
 	newRecord.type = type; // Set the primary impacted service
+	newRecord.configuration_item = configuration_item;
 
 	// Optionally, set other fields as needed
 
 	newRecord.insert();
 }
+
+// Update the duration field with newly calculated values
+var ugr = new GlideRecord(tableName);
+ugr.query();
+
+while(ugr.next()){
+	var dt1 = new GlideDateTime(ugr.begin);
+	var dt2 = new GlideDateTime(ugr.end);
+	var duration = new GlideDateTime.subtract(dt1,dt2);
+	ugr.setValue('duration', duration);
+	
+	// Insert the record into the target table
+	ugr.update();
+}
+
 ]]></script>
         <sys_class_name>sys_script_fix</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-14 10:31:18</sys_created_on>
         <sys_id>8ea0ae7897e27110504978300153af90</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Engineering types overlap</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
         <sys_update_name>sys_script_fix_8ea0ae7897e27110504978300153af90</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-14 14:33:37</sys_updated_on>
+        <sys_updated_on>2023-11-14 16:16:52</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

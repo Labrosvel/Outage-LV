@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description/>
+        <name>Engineering types overlap</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[// Define the table name
+var tableName = 'x_1092147_outage_l_outage_table_lv'; // Replace with your actual table name
+
+// Create a GlideRecord to iterate through the records
+var gr = new GlideRecord(tableName);
+gr.query();
+
+// Iterate through each record
+while (gr.next()) {
+    // Create a GlideRecord to find overlapping records
+    var overlappingGr = new GlideRecord(tableName);
+    overlappingGr.addQuery('type', gr.type); // Replace with your column name
+    overlappingGr.addQuery('sys_id', '!=', gr.sys_id); // Exclude the current record
+    overlappingGr.addQuery('begin', '<=', gr.end); // Check for overlap
+    overlappingGr.addQuery('end', '>=', gr.begin); // Check for overlap
+    overlappingGr.query();
+	
+	// Check if there are overlapping records
+	if (overlappingGr.hasNext()) {
+		// Determine the start and end dates for the new record
+		var newStartDate = gr.begin;
+		var newEndDate = gr.end;	
+
+		// Iterate through overlapping records to find the earliest start date and latest end date
+		while (overlappingGr.next()) {
+			if (overlappingGr.begin < newStartDate) {
+				newStartDate = overlappingGr.begin;
+			}
+			if (overlappingGr.end > newEndDate) {
+				newEndDate = overlappingGr.end;
+			}
+
+			// Delete overlapping record
+			overlappingGr.deleteRecord();
+		}
+
+		// Create a new record for the overlapping period
+		createNewRecord(newStartDate, newEndDate, gr.type);
+	}
+}
+
+
+function createNewRecord(start, end, type) {
+	var newRecord = new GlideRecord(tableName);
+	newRecord.initialize();
+	newRecord.begin = start; // Set the start date
+	newRecord.end = end; // Set the end date
+	newRecord.type = type; // Set the primary impacted service
+
+	// Optionally, set other fields as needed
+
+	newRecord.insert();
+}
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-14 10:31:18</sys_created_on>
+        <sys_id>8ea0ae7897e27110504978300153af90</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Engineering types overlap</sys_name>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_update_name>sys_script_fix_8ea0ae7897e27110504978300153af90</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-14 14:33:37</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

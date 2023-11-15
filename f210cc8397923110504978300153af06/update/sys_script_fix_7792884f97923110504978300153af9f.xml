@@ -4,7 +4,7 @@
         <description>Populating a new table and calculating duration manually with the script. &#13;
 New table is being reset every time the script is executed.&#13;
 When designing the table, the configuration item is referenced from cmdb_ci. name field.</description>
-        <name>Engineering duration</name>
+        <name>Create scoped table</name>
         <record_for_rollback>true</record_for_rollback>
         <script><![CDATA[// Delete all existing records
 var oldtargetGr = new GlideRecord('x_1092147_outage_l_outage_table_lv');
@@ -13,7 +13,11 @@ oldtargetGr.deleteMultiple();
 
 // Create an object to store rows from a table
 var gr = new GlideRecord('cmdb_ci_outage');
-gr.addQuery();
+// Filter on Outages that have already started and finished
+gr.addQuery('begin', '!=', 'NULL');
+gr.addQuery('end', '!=', 'NULL');
+// Additional temporary filter for shorting time of execution (only for demonstration)
+gr.addEncodedQuery("beginBETWEENjavascript:gs.dateGenerate('2023-01-01','00:00:00')@javascript:gs.dateGenerate('2023-01-31','23:59:59')");
 gr.query();
 
 // 	Iterate through the existing records
@@ -26,6 +30,7 @@ while(gr.next()){
 	targetGr.type = gr.type;
 	targetGr.begin = gr.begin;
 	targetGr.end = gr.end;
+	targetGr.primary_impacted_service = gr.u_business_service;
 	var dt1 = new GlideDateTime(gr.begin);
 	var dt2 = new GlideDateTime(gr.end);
 	var duration = new GlideDateTime.subtract(dt1,dt2);
@@ -39,15 +44,17 @@ while(gr.next()){
         <sys_class_name>sys_script_fix</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-08 12:42:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>7792884f97923110504978300153af9f</sys_id>
-        <sys_mod_count>45</sys_mod_count>
-        <sys_name>Engineering duration</sys_name>
+        <sys_mod_count>55</sys_mod_count>
+        <sys_name>Create scoped table</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
         <sys_update_name>sys_script_fix_7792884f97923110504978300153af9f</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-14 15:31:00</sys_updated_on>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-15 12:15:54</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
     <sys_script_fix action="INSERT_OR_UPDATE">
         <before>false</before>
-        <description>Update the existing table by splitting records (which are extended in more than one day) to new records which duration never extends more than one day.</description>
-        <name>Engineering record dates</name>
+        <description>Update the existing table by splitting records (which are extended in more than one day) to new records which duration never extends more than one day.&#13;
+Need to update the  System Properties &gt; Basic Configuration timezone to GMT</description>
+        <name>Splitting records</name>
         <record_for_rollback>true</record_for_rollback>
         <script><![CDATA[// Define the table name
 var tableName = 'x_1092147_outage_l_outage_table_lv'; // Replace with your actual table name
@@ -31,6 +32,7 @@ while (gr.next()) {
 		newRecord.number = gr.number;
 		newRecord.type = gr.type;
 		newRecord.configuration_item = gr.configuration_item;
+		newRecord.primary_impacted_service = gr.primary_impacted_service;
         newRecord.begin = startDate; // Set the start date
 		var newendDate = startDate.getDate() + ' 23:59:59'; // Set end date and time at 23:59:59
 		newRecord.end = new GlideDateTime(newendDate);
@@ -52,6 +54,7 @@ while (gr.next()) {
 	lastRecord.number = gr.number;
 	lastRecord.type = gr.type;
 	lastRecord.configuration_item = gr.configuration_item;
+	lastRecord.primary_impacted_service = gr.primary_impacted_service;
     lastRecord.begin = startDate; // Set the start date
     lastRecord.end = endDate; // Set the end date to the end of the incident
 
@@ -81,15 +84,17 @@ while(ugr.next()){
         <sys_class_name>sys_script_fix</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-08 17:04:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>1f11c58397963110504978300153aff4</sys_id>
-        <sys_mod_count>53</sys_mod_count>
-        <sys_name>Engineering record dates</sys_name>
+        <sys_mod_count>61</sys_mod_count>
+        <sys_name>Splitting records</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
         <sys_update_name>sys_script_fix_1f11c58397963110504978300153aff4</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-14 16:10:45</sys_updated_on>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-15 13:25:47</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

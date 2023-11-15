@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
     <sys_script_fix action="INSERT_OR_UPDATE">
         <before>false</before>
-        <description>Re-engineering the table by aggregating outages with the same 'Type' field to one outage that starts at the earliest datetime of the outages and finishing and the latest datetime of them.</description>
-        <name>Engineering types overlap</name>
+        <description>Re-engineering the table by aggregating outages with the same 'Primary Impacted Service' field to one outage that starts at the earliest datetime of the outages and finishing and the latest datetime of them.</description>
+        <name>Engineering Services Overlap</name>
         <record_for_rollback>true</record_for_rollback>
         <script><![CDATA[// Define the table name
 var tableName = 'x_1092147_outage_l_outage_table_lv'; // Replace with your actual table name
 
 // Create a GlideRecord to iterate through the records
 var gr = new GlideRecord(tableName);
+gr.addQuery();
 gr.query();
 
 // Iterate through each record
 while (gr.next()) {
     // Create a GlideRecord to find overlapping records
     var overlappingGr = new GlideRecord(tableName);
-    overlappingGr.addQuery('type', gr.type); // Replace with your column name
+    overlappingGr.addQuery('primary_impacted_service', gr.primary_impacted_service); // Replace with your column name
     overlappingGr.addQuery('sys_id', '!=', gr.sys_id); // Exclude the current record
     overlappingGr.addQuery('begin', '<=', gr.end); // Check for overlap
     overlappingGr.addQuery('end', '>=', gr.begin); // Check for overlap
@@ -39,24 +40,28 @@ while (gr.next()) {
 			// Delete overlapping record
 			overlappingGr.deleteRecord();
 		}
-
-		// Create a new record for the overlapping period
-		createNewRecord(newStartDate, newEndDate, gr.type, gr.configuration_item);
+		
+		// Check for duplicates based on start, end and Primary Impacted Service column 
+		createNewRecord(newStartDate, newEndDate, gr.primary_impacted_service, gr.configuration_item);
 	}
 }
 
 
-function createNewRecord(start, end, type, configuration_item) {
-	var newRecord = new GlideRecord(tableName);
-	newRecord.initialize();
-	newRecord.begin = start; // Set the start date
-	newRecord.end = end; // Set the end date
-	newRecord.type = type; // Set the primary impacted service
-	newRecord.configuration_item = configuration_item;
+function createNewRecord(start, end, primary_impacted_service, configuration_item) {
+	// Check if the start and end dates are the same as the original record
+	if (start.equals(gr.begin) && end.equals(gr.end)) {
+		return; //No need to create a new record if it has the same start and end dates
+	}
+		
+	// If the start and end dates are different, update the existing record	
+	gr.begin = start;
+	gr.end = end;
+	gr.primary_impacted_service = primary_impacted_service;
+	gr.configuration_item = configuration_item;	
 
 	// Optionally, set other fields as needed
 
-	newRecord.insert();
+	gr.update();
 }
 
 // Update the duration field with newly calculated values
@@ -77,15 +82,17 @@ while(ugr.next()){
         <sys_class_name>sys_script_fix</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-14 10:31:18</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>8ea0ae7897e27110504978300153af90</sys_id>
-        <sys_mod_count>13</sys_mod_count>
-        <sys_name>Engineering types overlap</sys_name>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>Engineering Services Overlap</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
         <sys_update_name>sys_script_fix_8ea0ae7897e27110504978300153af90</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-14 16:16:52</sys_updated_on>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-15 16:44:07</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

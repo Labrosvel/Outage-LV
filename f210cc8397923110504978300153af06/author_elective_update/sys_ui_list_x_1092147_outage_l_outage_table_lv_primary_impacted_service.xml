@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list action="DELETE" parent="" relationship="" sys_domain="global" table="x_1092147_outage_l_outage_table_lv" version="2" view="primary_impacted_service">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>VelentL</sys_created_by>
+            <sys_created_on>2023-11-15 10:45:44</sys_created_on>
+            <sys_id>65ad23891b627550dba1c3e5464bcb3e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>VelentL</sys_updated_by>
+            <sys_updated_on>2023-11-15 10:45:44</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>begin</element>
+            <list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>VelentL</sys_created_by>
+            <sys_created_on>2023-11-15 10:45:44</sys_created_on>
+            <sys_id>6dad23891b627550dba1c3e5464bcb3e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>VelentL</sys_updated_by>
+            <sys_updated_on>2023-11-15 10:45:44</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>configuration_item</element>
+            <list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>VelentL</sys_created_by>
+            <sys_created_on>2023-11-15 10:45:44</sys_created_on>
+            <sys_id>61ad23891b627550dba1c3e5464bcb3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>VelentL</sys_updated_by>
+            <sys_updated_on>2023-11-15 10:45:44</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>duration</element>
+            <list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>VelentL</sys_created_by>
+            <sys_created_on>2023-11-15 10:45:44</sys_created_on>
+            <sys_id>65ad23891b627550dba1c3e5464bcb3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>VelentL</sys_updated_by>
+            <sys_updated_on>2023-11-15 10:45:44</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>end</element>
+            <list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>VelentL</sys_created_by>
+            <sys_created_on>2023-11-15 10:45:44</sys_created_on>
+            <sys_id>69ad23891b627550dba1c3e5464bcb3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>VelentL</sys_updated_by>
+            <sys_updated_on>2023-11-15 10:45:44</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>type</element>
+            <list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>VelentL</sys_created_by>
+            <sys_created_on>2023-11-15 10:45:44</sys_created_on>
+            <sys_id>6dad23891b627550dba1c3e5464bcb3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>VelentL</sys_updated_by>
+            <sys_updated_on>2023-11-15 10:45:44</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_1092147_outage_l_outage_table_lv</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>VelentL</sys_created_by>
+            <sys_created_on>2023-11-15 10:45:44</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>25ad23891b627550dba1c3e5464bcb3d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1092147_outage_l_outage_table_lv</sys_name>
+            <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+            <sys_update_name>sys_ui_list_x_1092147_outage_l_outage_table_lv_primary_impacted_service</sys_update_name>
+            <sys_updated_by>VelentL</sys_updated_by>
+            <sys_updated_on>2023-11-15 10:45:44</sys_updated_on>
+            <sys_user/>
+            <view display_value="Primary Impacted Service" name="primary_impacted_service">e9adeb851b627550dba1c3e5464bcb8c</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Outage-LV">f210cc8397923110504978300153af06</application>
+        <file_path/>
+        <instance_id>b2b98cc2db2bae00cbf6d5b0cf96197f</instance_id>
+        <instance_name>lssidev3</instance_name>
+        <name>sys_ui_list_x_1092147_outage_l_outage_table_lv_primary_impacted_service</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_list parent="" relationship="" sys_domain="global" table="x_1092147_outage_l_outage_table_lv" version="2" view="primary_impacted_service"><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>number</element><list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id><max_value>false</max_value><min_value>false</min_value><position>0</position><sum>false</sum><sys_created_by>VelentL</sys_created_by><sys_created_on>2023-11-15 10:45:44</sys_created_on><sys_id>65ad23891b627550dba1c3e5464bcb3e</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>VelentL</sys_updated_by><sys_updated_on>2023-11-15 10:45:44</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>begin</element><list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id><max_value>false</max_value><min_value>false</min_value><position>1</position><sum>false</sum><sys_created_by>VelentL</sys_created_by><sys_created_on>2023-11-15 10:45:44</sys_created_on><sys_id>6dad23891b627550dba1c3e5464bcb3e</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>VelentL</sys_updated_by><sys_updated_on>2023-11-15 10:45:44</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>configuration_item</element><list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id><max_value>false</max_value><min_value>false</min_value><position>2</position><sum>false</sum><sys_created_by>VelentL</sys_created_by><sys_created_on>2023-11-15 10:45:44</sys_created_on><sys_id>61ad23891b627550dba1c3e5464bcb3f</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>VelentL</sys_updated_by><sys_updated_on>2023-11-15 10:45:44</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>duration</element><list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id><max_value>false</max_value><min_value>false</min_value><position>3</position><sum>false</sum><sys_created_by>VelentL</sys_created_by><sys_created_on>2023-11-15 10:45:44</sys_created_on><sys_id>65ad23891b627550dba1c3e5464bcb3f</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>VelentL</sys_updated_by><sys_updated_on>2023-11-15 10:45:44</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>end</element><list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id><max_value>false</max_value><min_value>false</min_value><position>4</position><sum>false</sum><sys_created_by>VelentL</sys_created_by><sys_created_on>2023-11-15 10:45:44</sys_created_on><sys_id>69ad23891b627550dba1c3e5464bcb3f</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>VelentL</sys_updated_by><sys_updated_on>2023-11-15 10:45:44</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>type</element><list_id display_value="x_1092147_outage_l_outage_table_lv" element="NULL" name="x_1092147_outage_l_outage_table_lv" parent="NULL" relationship="NULL" sys_domain="global" view="e9adeb851b627550dba1c3e5464bcb8c">25ad23891b627550dba1c3e5464bcb3d</list_id><max_value>false</max_value><min_value>false</min_value><position>5</position><sum>false</sum><sys_created_by>VelentL</sys_created_by><sys_created_on>2023-11-15 10:45:44</sys_created_on><sys_id>6dad23891b627550dba1c3e5464bcb3f</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>VelentL</sys_updated_by><sys_updated_on>2023-11-15 10:45:44</sys_updated_on></sys_ui_list_element><sys_ui_list action="INSERT_OR_UPDATE"><average_value>false</average_value><element/><max_value>false</max_value><min_value>false</min_value><name>x_1092147_outage_l_outage_table_lv</name><parent/><position/><relationship/><sum>false</sum><sys_class_name>sys_ui_list</sys_class_name><sys_created_by>VelentL</sys_created_by><sys_created_on>2023-11-15 10:45:44</sys_created_on><sys_customer_update>false</sys_customer_update><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>25ad23891b627550dba1c3e5464bcb3d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1092147_outage_l_outage_table_lv</sys_name><sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope><sys_update_name>sys_ui_list_x_1092147_outage_l_outage_table_lv_primary_impacted_service</sys_update_name><sys_updated_by>VelentL</sys_updated_by><sys_updated_on>2023-11-15 10:45:44</sys_updated_on><sys_user/><view display_value="Primary Impacted Service" name="primary_impacted_service">e9adeb851b627550dba1c3e5464bcb8c</view><view_name/></sys_ui_list></sys_ui_list></record_update>]]></payload>
+        <payload_hash>370395095</payload_hash>
+        <record_name>Outage_table-LV</record_name>
+        <reverted_from/>
+        <source>ba323b3c1b6a355064122144b24bcb68</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>VelentL</sys_created_by>
+        <sys_created_on>2023-11-15 10:45:44</sys_created_on>
+        <sys_id>65ad23891b627550dba1c3e5464bcb42</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18bd29641190000001</sys_recorded_at>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-15 10:45:44</sys_updated_on>
+        <type>List Layout</type>
+        <update_guid>e9ad2389ff627550248906372a958941</update_guid>
+        <update_guid_history>e9ad2389ff627550248906372a958941:370395095</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>VelentL</sys_created_by>
+        <sys_created_on>2023-11-15 10:51:17</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_ui_list">sys_ui_list</sys_db_object>
+        <sys_id>46aaac4c800a4b94b071e8aa85124ef9</sys_id>
+        <sys_metadata>25ad23891b627550dba1c3e5464bcb3d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1092147_outage_l_outage_table_lv</sys_name>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_parent display_value="Outage_table-LV">d132404f97923110504978300153af34</sys_parent>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_scope_delete display_value="">8096e3c28f7048efac55807797b0c2e1</sys_scope_delete>
+        <sys_update_name>sys_ui_list_x_1092147_outage_l_outage_table_lv_primary_impacted_service</sys_update_name>
+        <sys_update_version display_value="sys_ui_list_x_1092147_outage_l_outage_table_lv_primary_impacted_service">65ad23891b627550dba1c3e5464bcb42</sys_update_version>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-15 10:51:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

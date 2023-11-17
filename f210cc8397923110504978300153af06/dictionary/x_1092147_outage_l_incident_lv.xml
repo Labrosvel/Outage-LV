@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="6a8a36fd1bee799064122144b24bcbba" label="incident_LV" max_length="40" name="x_1092147_outage_l_incident_lv" type="collection">
+        <element label="Closed at" max_length="40" name="closed_at" type="glide_date_time"/>
+        <element label="Number" max_length="16" name="number" type="string"/>
+        <element label="Opened" max_length="40" name="opened_at" type="glide_date_time"/>
+        <element label="Priority" max_length="40" name="priority" type="integer"/>
+    </element>
+</database>

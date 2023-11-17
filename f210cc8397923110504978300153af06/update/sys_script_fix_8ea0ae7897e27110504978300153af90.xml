@@ -37,17 +37,20 @@ while (gr.next()) {
     // Check if there are overlapping records
     if (overlappingGr.hasNext()) {
         // Determine the start and end dates for the new record
-        var newStartDate = gr.begin;
-        var newEndDate = gr.end;
+        var newStartDate = new GlideDateTime(gr.begin);
+        var newEndDate = new GlideDateTime(gr.end);
 		
 		var innerCounter = 1;
 		
 		while (overlappingGr.next()) {
-			if (overlappingGr.begin < newStartDate) {
-            newStartDate = overlappingGr.begin;
+			var overlapStartDate = new GlideDateTime(overlappingGr.begin);
+			var overlapEndDate = new GlideDateTime(overlappingGr.end);
+			
+			if (overlapStartDate.before(newStartDate)) {
+            newStartDate = overlapStartDate;
 			}
-			if (overlappingGr.end > newEndDate) {
-            newEndDate = overlappingGr.end;
+			if (overlapEndDate.after(newEndDate)) {
+            newEndDate = overlapEndDate;
 			}
 			
 			// Log information about the overlapping record
@@ -104,7 +107,7 @@ while(ugr.next()){
         <sys_created_on>2023-11-14 10:31:18</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>8ea0ae7897e27110504978300153af90</sys_id>
-        <sys_mod_count>69</sys_mod_count>
+        <sys_mod_count>70</sys_mod_count>
         <sys_name>Create Outage per Service table</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
@@ -112,7 +115,7 @@ while(ugr.next()){
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
         <sys_update_name>sys_script_fix_8ea0ae7897e27110504978300153af90</sys_update_name>
         <sys_updated_by>VelentL</sys_updated_by>
-        <sys_updated_on>2023-11-17 13:45:51</sys_updated_on>
+        <sys_updated_on>2023-11-17 17:03:10</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

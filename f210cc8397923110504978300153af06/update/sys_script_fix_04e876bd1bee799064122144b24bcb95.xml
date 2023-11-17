@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description/>
+        <name>Test script for incident</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[// Define the original table name
+var originalTableName = 'incident'; // Replace with your actual original table name
+
+// Define the new table name
+var newTableName = 'x_1092147_outage_l_incident_lv'; // Replace with your actual new table name
+var oldtargetGr = new GlideRecord(newTableName);
+oldtargetGr.query();
+oldtargetGr.deleteMultiple();
+
+var counter = 1;
+
+// Create a GlideRecord to iterate through the records in the original table
+var gr = new GlideRecord(originalTableName);
+gr.addEncodedQuery("closed_atISNOTEMPTY");
+gr.orderBy('opened_at');
+gr.query();
+
+while (gr.next()) {
+    // Create a GlideRecord for the new table to store overlapping records
+    var newRecordGr = new GlideRecord(newTableName);
+    newRecordGr.initialize();
+
+    // Create a GlideRecord to find overlapping records in the original table
+    var overlappingGr = new GlideRecord(originalTableName);
+	overlappingGr.addEncodedQuery("closed_atISNOTEMPTY");
+	overlappingGr.addQuery('priority', gr.priority);
+    overlappingGr.addQuery('sys_id', '!=', gr.sys_id);
+    overlappingGr.addQuery('opened_at', '<=', gr.closed_at);
+    overlappingGr.addQuery('closed_at', '>=', gr.opened_at);
+	overlappingGr.orderBy('opened_at');
+    overlappingGr.query();
+
+    // Check if there are overlapping records
+    if (overlappingGr.hasNext()) {
+        // Determine the start and end dates for the new record
+        var newStartDate = new GlideDateTime(gr.opened_at);
+        var newEndDate = new GlideDateTime(gr.closed_at);
+		
+		var innerCounter = 1;
+		
+		while (overlappingGr.next()) {
+			var overlapStartDate = new GlideDateTime(overlappingGr.opened_at);
+			var overlapEndDate = new GlideDateTime(overlappingGr.closed_at);
+			
+			if (overlapStartDate.before(newStartDate)) {
+            newStartDate = overlapStartDate;
+			}
+			if (overlapEndDate.after(newEndDate)) {
+            newEndDate = overlapEndDate;
+			}
+			
+			// Log information about the overlapping record
+            gs.info("[" + counter + "] [" + innerCounter + "] Processing Record: " + gr.number + ", Overlapping Record: " + overlappingGr.number + ", Opened: " + overlappingGr.opened_at + ", Closed at: " + overlappingGr.closed_at + 
+					". \nUpdating opened_at: " + newStartDate + " and closed_at: " + newEndDate);
+			innerCounter++ ;
+
+		}
+		
+		// Log information about the new record
+        gs.info("Creating New Record for:" + gr.number + " with Opened: " + newStartDate + ", Closed at: " + newEndDate);
+		
+        // Set the start and end dates for the new record
+        newRecordGr.setValue('opened_at', newStartDate);
+        newRecordGr.setValue('closed_at', newEndDate);
+        newRecordGr.setValue('priority', gr.priority);
+		newRecordGr.setValue('number', gr.number); // delete this when you fix the issue
+
+        // Optionally, set other fields as needed
+
+        // Insert the new record into the new table
+        newRecordGr.insert();
+    } else {
+		// If no overlapping records
+		newRecordGr.setValue('opened_at', gr.opened_at);
+		newRecordGr.setValue('closed_at', gr.closed_at);
+		newRecordGr.setValue('priority', gr.priority);
+		newRecordGr.setValue('number', gr.number);
+
+		// Insert the new record into the new table
+        newRecordGr.insert();
+	}
+	counter++;
+}
+
+
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>VelentL</sys_created_by>
+        <sys_created_on>2023-11-17 14:50:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>04e876bd1bee799064122144b24bcb95</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Test script for incident</sys_name>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_update_name>sys_script_fix_04e876bd1bee799064122144b24bcb95</sys_update_name>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-17 16:49:49</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

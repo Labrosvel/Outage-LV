@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="DELETE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name>Outage_per_Service-LV</name>
+        <order>100</order>
+        <roles/>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>VelentL</sys_created_by>
+        <sys_created_on>2023-11-16 09:37:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>c4a7a0a11ba6b19064122144b24bcbe5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Outage_per_Service-LV</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_update_name>sys_app_application_c4a7a0a11ba6b19064122144b24bcbe5</sys_update_name>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-16 09:37:30</sys_updated_on>
+        <title>Outage_per_Service-LV</title>
+        <view_name/>
+    </sys_app_application>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Outage-LV">f210cc8397923110504978300153af06</application>
+        <file_path/>
+        <instance_id>b2b98cc2db2bae00cbf6d5b0cf96197f</instance_id>
+        <instance_name>lssidev3</instance_name>
+        <name>sys_app_application_c4a7a0a11ba6b19064122144b24bcbe5</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category><description/><device_type>browser</device_type><hint/><name>Outage_per_Service-LV</name><order>100</order><roles/><sys_class_name>sys_app_application</sys_class_name><sys_created_by>VelentL</sys_created_by><sys_created_on>2023-11-16 09:37:30</sys_created_on><sys_customer_update>false</sys_customer_update><sys_domain>global</sys_domain><sys_domain_path/><sys_id>c4a7a0a11ba6b19064122144b24bcbe5</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Outage_per_Service-LV</sys_name><sys_overrides/><sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope><sys_update_name>sys_app_application_c4a7a0a11ba6b19064122144b24bcbe5</sys_update_name><sys_updated_by>VelentL</sys_updated_by><sys_updated_on>2023-11-16 09:37:30</sys_updated_on><title>Outage_per_Service-LV</title><view_name/></sys_app_application></record_update>]]></payload>
+        <payload_hash>1868034865</payload_hash>
+        <record_name>Outage_per_Service-LV</record_name>
+        <reverted_from/>
+        <source>ba323b3c1b6a355064122144b24bcb68</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>VelentL</sys_created_by>
+        <sys_created_on>2023-11-16 09:37:31</sys_created_on>
+        <sys_id>80a7a0a11ba6b19064122144b24bcbe9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18bd77e27950000001</sys_recorded_at>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-16 09:37:31</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>44a7a0a176a6b190a6fe1c0e814534e8</update_guid>
+        <update_guid_history>44a7a0a176a6b190a6fe1c0e814534e8:1868034865</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Record deleted 16/11/2023 12:53:27">16745d651b2eb19064122144b24bcbf7</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>VelentL</sys_created_by>
+        <sys_created_on>2023-11-16 12:53:27</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_app_application">sys_app_application</sys_db_object>
+        <sys_id>0c61bdcfc07348e680763139411281a4</sys_id>
+        <sys_metadata>c4a7a0a11ba6b19064122144b24bcbe5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Outage_per_Service-LV</sys_name>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_scope_delete display_value="">8096e3c28f7048efac55807797b0c2e1</sys_scope_delete>
+        <sys_update_name>sys_app_application_c4a7a0a11ba6b19064122144b24bcbe5</sys_update_name>
+        <sys_update_version display_value="sys_app_application_c4a7a0a11ba6b19064122144b24bcbe5">80a7a0a11ba6b19064122144b24bcbe9</sys_update_version>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-16 12:53:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

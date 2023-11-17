@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4f1bdd251b6eb19064122144b24bcbca" label="Outage_per_Service-LV" max_length="40" name="x_1092147_outage_l_outage_per_service_lv" type="collection">
+        <element label="Begin" max_length="40" name="begin" type="glide_date_time"/>
+        <element label="Configuration Item" max_length="32" name="configuration_item" reference="cmdb_ci" type="reference"/>
+        <element label="Duration" max_length="40" name="duration" type="glide_duration"/>
+        <element label="End" max_length="40" name="end" type="glide_date_time"/>
+        <element label="Number" max_length="40" name="number" type="string"/>
+        <element label="Primary Impacted Service" max_length="32" name="primary_impacted_service" reference="cmdb_ci_service" type="reference"/>
+        <index name="index">
+            <element name="configuration_item"/>
+        </index>
+        <index name="index2">
+            <element name="primary_impacted_service"/>
+        </index>
+    </element>
+</database>

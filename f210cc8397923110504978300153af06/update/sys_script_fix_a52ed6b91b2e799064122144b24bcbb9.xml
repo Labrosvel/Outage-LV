@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
     <sys_script_fix action="INSERT_OR_UPDATE">
         <before>false</before>
-        <description>Populating a new table from the Scoped table 'x_1092147_outage_l_outage_table_lv' by addressing the overlaping between Services issue&#13;
-In this table we aggregating outages with the same 'Primary Impacted Service' field to one outage that starts at the earliest datetime of the outages and finishes and the latest datetime of them.</description>
-        <name>Create Outage per Service table</name>
+        <description/>
+        <name>Test script</name>
         <record_for_rollback>true</record_for_rollback>
         <script><![CDATA[// Define the original table name
-var originalTableName = 'x_1092147_outage_l_outage_table_lv'; // Replace with your actual original table name
+var originalTableName = 'cmdb_ci_outage'; // Replace with your actual original table name
 
 // Define the new table name
 var newTableName = 'x_1092147_outage_l_outage_per_service_lv'; // Replace with your actual new table name
@@ -18,7 +17,7 @@ var counter = 1;
 
 // Create a GlideRecord to iterate through the records in the original table
 var gr = new GlideRecord(originalTableName);
-gr.addEncodedQuery("beginON2023-01-01@javascript:gs.dateGenerate('2023-01-01','start')@javascript:gs.dateGenerate('2023-01-01','end')");
+gr.addEncodedQuery("beginSAMEASend@day^beginBETWEENjavascript:gs.dateGenerate('2023-01-01','00:00:00')@javascript:gs.dateGenerate('2023-01-16','23:59:59')");
 gr.query();
 
 while (gr.next()) {
@@ -28,7 +27,7 @@ while (gr.next()) {
 
     // Create a GlideRecord to find overlapping records in the original table
     var overlappingGr = new GlideRecord(originalTableName);
-    overlappingGr.addQuery('primary_impacted_service', gr.primary_impacted_service);
+    overlappingGr.addQuery('u_business_service', gr.u_business_service);
     overlappingGr.addQuery('sys_id', '!=', gr.sys_id);
     overlappingGr.addQuery('begin', '<=', gr.end);
     overlappingGr.addQuery('end', '>=', gr.begin);
@@ -63,7 +62,7 @@ while (gr.next()) {
         // Set the start and end dates for the new record
         newRecordGr.setValue('begin', newStartDate);
         newRecordGr.setValue('end', newEndDate);
-        newRecordGr.setValue('primary_impacted_service', gr.primary_impacted_service);
+        newRecordGr.setValue('primary_impacted_service', gr.u_business_service);
 		newRecordGr.setValue('number', gr.number); // delete this when you fix the issue
 
         // Optionally, set other fields as needed
@@ -74,8 +73,8 @@ while (gr.next()) {
 		// If no overlapping records
 		newRecordGr.setValue('begin', gr.begin);
 		newRecordGr.setValue('end', gr.end);
-		newRecordGr.setValue('primary_impacted_service', gr.primary_impacted_service);
-		newRecordGr.setValue('configuration_item', gr.configuration_item);
+		newRecordGr.setValue('primary_impacted_service', gr.u_business_service);
+		newRecordGr.setValue('configuration_item', gr.cmdb_ci);
 		newRecordGr.setValue('number', gr.number);
 
 		// Insert the new record into the new table
@@ -100,19 +99,19 @@ while(ugr.next()){
 
 ]]></script>
         <sys_class_name>sys_script_fix</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-11-14 10:31:18</sys_created_on>
+        <sys_created_by>VelentL</sys_created_by>
+        <sys_created_on>2023-11-17 12:56:39</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>8ea0ae7897e27110504978300153af90</sys_id>
-        <sys_mod_count>69</sys_mod_count>
-        <sys_name>Create Outage per Service table</sys_name>
+        <sys_id>a52ed6b91b2e799064122144b24bcbb9</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Test script</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
-        <sys_update_name>sys_script_fix_8ea0ae7897e27110504978300153af90</sys_update_name>
+        <sys_update_name>sys_script_fix_a52ed6b91b2e799064122144b24bcbb9</sys_update_name>
         <sys_updated_by>VelentL</sys_updated_by>
-        <sys_updated_on>2023-11-17 13:45:51</sys_updated_on>
+        <sys_updated_on>2023-11-17 13:54:04</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

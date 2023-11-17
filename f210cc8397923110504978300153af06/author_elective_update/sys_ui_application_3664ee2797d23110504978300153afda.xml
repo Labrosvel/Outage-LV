@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_application">
+    <sys_ui_application action="DELETE">
+        <active>true</active>
+        <hint/>
+        <name>New Outage table</name>
+        <order/>
+        <roles>x_1092147_outage_l.new_outage_table_lv_user</roles>
+        <sys_class_name>sys_ui_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-10 13:34:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3664ee2797d23110504978300153afda</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Outage table</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_update_name>sys_ui_application_3664ee2797d23110504978300153afda</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-10 13:34:54</sys_updated_on>
+    </sys_ui_application>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Outage-LV">f210cc8397923110504978300153af06</application>
+        <file_path/>
+        <instance_id>b2b98cc2db2bae00cbf6d5b0cf96197f</instance_id>
+        <instance_name>lssidev3</instance_name>
+        <name>sys_ui_application_3664ee2797d23110504978300153afda</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_application">
+    <sys_ui_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <hint/>
+        <name>New Outage table</name>
+        <order/>
+        <roles>x_1092147_outage_l.new_outage_table_lv_user</roles>
+        <sys_class_name>sys_ui_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-10 13:34:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3664ee2797d23110504978300153afda</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Outage table</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_update_name>sys_ui_application_3664ee2797d23110504978300153afda</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-10 13:34:54</sys_updated_on>
+    </sys_ui_application>
+</record_update>]]></payload>
+        <payload_hash>1548601261</payload_hash>
+        <record_name>New Outage table</record_name>
+        <reverted_from/>
+        <source>63ba57091bae3550dba1c3e5464bcb65</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>VelentL</sys_created_by>
+        <sys_created_on>2023-11-15 09:23:13</sys_created_on>
+        <sys_id>f8ca97091bae3550dba1c3e5464bcba0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18bd24ab4b10000001</sys_recorded_at>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-15 09:23:13</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>b4ca9709c0ae35502c2ad226991baaa0</update_guid>
+        <update_guid_history>b4ca9709c0ae35502c2ad226991baaa0:0,adaa13097dae35509aaa3a7803c1acae:-1744383982,a452ff7c436a3550d214b2695540d89b:1548601261</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>VelentL</sys_created_by>
+        <sys_created_on>2023-11-16 12:38:25</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_ui_application">sys_ui_application</sys_db_object>
+        <sys_id>06cd75c01f344fba9dcdb8a5f0134e24</sys_id>
+        <sys_metadata>3664ee2797d23110504978300153afda</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Outage table</sys_name>
+        <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
+        <sys_scope_delete display_value="">8096e3c28f7048efac55807797b0c2e1</sys_scope_delete>
+        <sys_update_name>sys_ui_application_3664ee2797d23110504978300153afda</sys_update_name>
+        <sys_update_version display_value="sys_ui_application_3664ee2797d23110504978300153afda">f8ca97091bae3550dba1c3e5464bcba0</sys_update_version>
+        <sys_updated_by>VelentL</sys_updated_by>
+        <sys_updated_on>2023-11-16 12:38:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

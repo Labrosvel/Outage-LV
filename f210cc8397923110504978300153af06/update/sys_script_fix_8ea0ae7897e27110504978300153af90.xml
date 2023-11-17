@@ -18,10 +18,10 @@ var counter = 1;
 
 // Create a GlideRecord to iterate through the records in the original table
 var gr = new GlideRecord(originalTableName);
-gr.addEncodedQuery("beginON2023-01-01@javascript:gs.dateGenerate('2023-01-01','start')@javascript:gs.dateGenerate('2023-01-01','end')");
+// gr.addEncodedQuery("beginON2023-01-01@javascript:gs.dateGenerate('2023-01-01','start')@javascript:gs.dateGenerate('2023-01-01','end')");
 gr.query();
 
-while (gr.next()) {
+while (gr.next()) {	
     // Create a GlideRecord for the new table to store overlapping records
     var newRecordGr = new GlideRecord(newTableName);
     newRecordGr.initialize();
@@ -30,7 +30,7 @@ while (gr.next()) {
     var overlappingGr = new GlideRecord(originalTableName);
     overlappingGr.addQuery('primary_impacted_service', gr.primary_impacted_service);
     overlappingGr.addQuery('sys_id', '!=', gr.sys_id);
-    overlappingGr.addQuery('begin', '<=', gr.end);
+    overlappingGr.addQuery('begin', '<=', gr.end); // It seems that this works however alter the dates to compare GlideDateTime Objects
     overlappingGr.addQuery('end', '>=', gr.begin);
     overlappingGr.query();
 
@@ -107,7 +107,7 @@ while(ugr.next()){
         <sys_created_on>2023-11-14 10:31:18</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>8ea0ae7897e27110504978300153af90</sys_id>
-        <sys_mod_count>70</sys_mod_count>
+        <sys_mod_count>73</sys_mod_count>
         <sys_name>Create Outage per Service table</sys_name>
         <sys_package display_value="Outage-LV" source="x_1092147_outage_l">f210cc8397923110504978300153af06</sys_package>
         <sys_policy/>
@@ -115,7 +115,7 @@ while(ugr.next()){
         <sys_scope display_value="Outage-LV">f210cc8397923110504978300153af06</sys_scope>
         <sys_update_name>sys_script_fix_8ea0ae7897e27110504978300153af90</sys_update_name>
         <sys_updated_by>VelentL</sys_updated_by>
-        <sys_updated_on>2023-11-17 17:03:10</sys_updated_on>
+        <sys_updated_on>2023-11-17 17:31:13</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>
